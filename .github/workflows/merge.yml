@@ -1,0 +1,29 @@
+name: Merge PR
+on:
+  pull_request:
+    types: [closed] 
+jobs:
+  merge-PR:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dump GitHub context
+         env:
+           GITHUB_CONTEXT: ${{ toJson(github) }}
+         run: echo "$GITHUB_CONTEXT"
+         
+     - name: Add Grafana annotation
+        uses: frankie567/grafana-annotation-action@v1.0.2
+        with:
+        # Grafana API host
+        apiHost: 
+        # Grafana API token
+        apiToken: 
+        # Text of the annotation
+        text: github.event.pull_title
+        # Id. of the dashboard to add the annotation on. If not provided, will be global to all dashboards.
+        dashboardId: 
+        # Id. of the panel to add the annotation on. If not provided, will be global to all panels.
+        panelId: 
+        # Comma-separated list of tags assigned to the annotation.
+        tags: deployment
