@@ -7,6 +7,12 @@ on:
     branches:
       - master
 jobs:
+  log-something:
+    runs-on: ubuntu-latest
+    steps:
+    - name: just echo a message
+      run: |
+        echo Hello there!   
   merge-PR:
     runs-on: ubuntu-latest
     steps:
@@ -17,4 +23,5 @@ jobs:
         apiToken: eyJrIjoiQkhZU0dkNFA3T2Y2NjBKVkV5MkVyVXI5Q1g2VGpvUnEiLCJuIjoiZ3JhZmFuYS1hbm5vdGF0aW9uIiwiaWQiOjF9
         text: test2
         dashboardId: YBiFemjWz
-        tags: deployment,github
+        tags: deployment,github 
+      
