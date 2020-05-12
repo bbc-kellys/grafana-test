@@ -16,14 +16,14 @@ jobs:
         uses: frankie567/grafana-annotation-action@v1.0.2
         with:
         # Grafana API host
-        apiHost: 
+        apiHost: https://grafana.web.tools.bbc.co.uk
         # Grafana API token
         apiToken: 
         # Text of the annotation
-        text: github.event.pull_title
+        text: github.event.pull_request.title
         # Id. of the dashboard to add the annotation on. If not provided, will be global to all dashboards.
-        dashboardId: 
+        dashboardId: YBiFemjWz
         # Id. of the panel to add the annotation on. If not provided, will be global to all panels.
-        panelId: 
+        panelId: 15
         # Comma-separated list of tags assigned to the annotation.
         tags: deployment
