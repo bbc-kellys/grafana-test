@@ -21,6 +21,7 @@ jobs:
        with:
         apiHost: https://grafana.web.tools.bbc.co.uk
         apiToken: eyJrIjoiQkhZU0dkNFA3T2Y2NjBKVkV5MkVyVXI5Q1g2VGpvUnEiLCJuIjoiZ3JhZmFuYS1hbm5vdGF0aW9uIiwiaWQiOjF9
+        certifcate: ${{secrets.certificate}}
         text: test2
         dashboardId: 18
         tags: deployment,github 
